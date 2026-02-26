@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c:*)",
+      "Bash(uvicorn app.main:app:*)",
+      "Read(//c/Users/sml_k/AppData/Local/Temp/claude/c--Users-sml-k-source-qttn-qttnPortfolio/tasks/**)",
+      "Bash(npm run dev:*)"
+    ]
+  }
+}
