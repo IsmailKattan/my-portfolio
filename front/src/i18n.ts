@@ -63,10 +63,10 @@ const resources = {
       },
       landing: {
         hero: {
-          badge: 'Cybersecurity Professional',
-          headlinePart1: 'Securing the',
-          headlineGradient: 'Digital Future',
-          subtitle: 'Ethical Hacker\u00a0·\u00a0Cloud Security Expert\u00a0·\u00a0Penetration Tester',
+          badge: 'Cybersecurity Enthusiast',
+          headlinePart1: 'Breaking Into',
+          headlineGradient: 'Cybersecurity',
+          subtitle: 'CTF Player\u00a0·\u00a0Security Learner\u00a0·\u00a0Fresh Graduate',
           ctaPortfolio: 'Explore Portfolio',
           ctaCV: 'View CV',
           scroll: 'Scroll'
@@ -85,10 +85,10 @@ const resources = {
         },
         about: {
           label: 'About Me',
-          heading1: 'Building a Safer',
-          heading2: 'Digital World',
-          para1: 'I\'m a cybersecurity professional with a passion for protecting digital assets and helping organizations build secure infrastructures — with expertise in penetration testing, cloud security, and secure development practices.',
-          para2: 'My mission is to make the digital world safer, one system at a time — identifying vulnerabilities, implementing controls, and educating teams on best practices.',
+          heading1: 'Passionate About',
+          heading2: 'Cybersecurity',
+          para1: 'I\'m a fresh cybersecurity graduate with a deep curiosity for how systems are attacked and defended. I spend my time on CTF challenges, hands-on labs, and personal projects to sharpen my skills and turn theory into practice.',
+          para2: 'I\'m actively working toward my first role in the field — earning certifications, building a real project portfolio, and engaging with the security community to grow a little every single day.',
           cta: 'View Full CV'
         },
         tryhackme: {
@@ -182,10 +182,10 @@ const resources = {
       },
       landing: {
         hero: {
-          badge: 'متخصص في الأمن السيبراني',
-          headlinePart1: 'تأمين',
-          headlineGradient: 'المستقبل الرقمي',
-          subtitle: 'مخترق أخلاقي\u00a0·\u00a0خبير أمن السحابة\u00a0·\u00a0مختبر اختراق',
+          badge: 'مهتم بالأمن السيبراني',
+          headlinePart1: 'طريقي نحو',
+          headlineGradient: 'الأمن السيبراني',
+          subtitle: 'لاعب CTF\u00a0·\u00a0متعلم متحمس\u00a0·\u00a0خريج حديث',
           ctaPortfolio: 'استعرض الأعمال',
           ctaCV: 'عرض السيرة الذاتية',
           scroll: 'مرر'
@@ -204,10 +204,10 @@ const resources = {
         },
         about: {
           label: 'نبذة عني',
-          heading1: 'نحو عالم رقمي',
-          heading2: 'أكثر أماناً',
-          para1: 'أنا متخصص في الأمن السيبراني، شغوف بحماية الأصول الرقمية ومساعدة المؤسسات في بناء بنى تحتية آمنة — بخبرة واسعة في اختبار الاختراق وأمن السحابة وممارسات التطوير الآمن.',
-          para2: 'مهمتي جعل العالم الرقمي أكثر أماناً، نظاماً تلو الآخر — من خلال اكتشاف الثغرات وتطبيق الضوابط الأمنية وتثقيف الفرق حول أفضل الممارسات.',
+          heading1: 'شغف حقيقي',
+          heading2: 'بالأمن السيبراني',
+          para1: 'أنا خريج حديث في الأمن السيبراني، أحمل فضولاً عميقاً لفهم أساليب الهجوم والدفاع. أقضي وقتي في تحديات CTF والمختبرات العملية والمشاريع الشخصية لأحوّل المعرفة النظرية إلى مهارات تطبيقية.',
+          para2: 'أعمل بجد للحصول على أولى فرصي المهنية في هذا المجال — باكتساب الشهادات وبناء محفظة أعمال حقيقية والتواصل مع مجتمع الأمن لأتطور كل يوم.',
           cta: 'عرض السيرة الذاتية الكاملة'
         },
         tryhackme: {
@@ -301,10 +301,10 @@ const resources = {
       },
       landing: {
         hero: {
-          badge: 'Siber Güvenlik Uzmanı',
-          headlinePart1: 'Güvenli Bir',
-          headlineGradient: 'Dijital Gelecek',
-          subtitle: 'Etik Hacker\u00a0·\u00a0Bulut Güvenliği Uzmanı\u00a0·\u00a0Sızma Testi Uzmanı',
+          badge: 'Siber Güvenlik Meraklısı',
+          headlinePart1: 'Siber Güvenliğe',
+          headlineGradient: 'Adım Atıyorum',
+          subtitle: 'CTF Oyuncusu\u00a0·\u00a0Güvenlik Öğrencisi\u00a0·\u00a0Yeni Mezun',
           ctaPortfolio: 'Portföyü Keşfet',
           ctaCV: 'Özgeçmişi Gör',
           scroll: 'Kaydır'
@@ -323,10 +323,10 @@ const resources = {
         },
         about: {
           label: 'Hakkımda',
-          heading1: 'Daha Güvenli Bir',
-          heading2: 'Dijital Dünya',
-          para1: 'Dijital varlıkları koruma konusunda tutkuluyum ve kuruluşların güvenli altyapılar inşa etmesine yardım ediyorum — penetrasyon testi, bulut güvenliği ve güvenli geliştirme uygulamalarındaki uzmanlığımla.',
-          para2: 'Misyonum dijital dünyayı tek tek sistemler üzerinden daha güvenli hale getirmek — açıkları tespit ederek, kontroller uygulayarak ve ekiplere en iyi uygulamaları öğreterek.',
+          heading1: 'Siber Güvenliğe',
+          heading2: 'Tutkuyla Bağlıyım',
+          para1: 'Sistemlerin nasıl saldırıya uğradığını ve nasıl savunulduğunu anlamaya derin bir merak duyan, yeni mezun bir siber güvenlik öğrencisiyim. CTF yarışmaları, uygulamalı laboratuvarlar ve kişisel projeler üzerinde çalışarak teorik bilgiyi pratiğe dönüştürüyorum.',
+          para2: 'Sertifikalar kazanarak, gerçek projelerden oluşan bir portföy inşa ederek ve güvenlik topluluğuyla bağlantı kurarak sektöre girmeye her gün aktif olarak çalışıyorum.',
           cta: 'Tam Özgeçmişi Gör'
         },
         tryhackme: {

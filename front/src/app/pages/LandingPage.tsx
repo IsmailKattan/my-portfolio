@@ -1,14 +1,13 @@
 import { motion } from 'motion/react';
 import {
   ArrowDown, Shield, Code, Cloud, Lock,
-  Calendar, Briefcase, Award, BookOpen,
   ExternalLink, ChevronRight,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AnimatedLogo } from '../components/AnimatedLogo';
-import { StatCard } from '../components/StatCard';
+// import { StatCard } from '../components/StatCard'; // hidden with stats section
 import { FeaturedProjects } from '../components/FeaturedProjects';
 import { LatestBlog } from '../components/LatestBlog';
 import { CertificatesStrip } from '../components/CertificatesStrip';
@@ -16,12 +15,13 @@ import { ContactCTA } from '../components/ContactCTA';
 import { TryHackMeActivity } from '../components/TryHackMeActivity';
 
 // ─────────────────────────────────────────────────────────────────────────────
-const statDefs = [
-  { value: 5,  suffix: '+', labelKey: 'landing.stats.years',    icon: Calendar  },
-  { value: 20, suffix: '+', labelKey: 'landing.stats.projects',  icon: Briefcase },
-  { value: 8,  suffix: '',  labelKey: 'landing.stats.certs',     icon: Award     },
-  { value: 30, suffix: '+', labelKey: 'landing.stats.posts',     icon: BookOpen  },
-];
+// statDefs hidden with stats section
+// const statDefs = [
+//   { value: 5,  suffix: '+', labelKey: 'landing.stats.years',    icon: Calendar  },
+//   { value: 20, suffix: '+', labelKey: 'landing.stats.projects',  icon: Briefcase },
+//   { value: 8,  suffix: '',  labelKey: 'landing.stats.certs',     icon: Award     },
+//   { value: 30, suffix: '+', labelKey: 'landing.stats.posts',     icon: BookOpen  },
+// ];
 
 const expertiseDefs = [
   { nameKey: 'landing.expertise.pentest', icon: Shield },
@@ -269,15 +269,11 @@ export function LandingPage() {
         </motion.div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════════════
-          STATS  ·  Dark accent strip with animated counters
-      ═══════════════════════════════════════════════════════════════════════ */}
+      {/* STATS section hidden — re-enable when ready
       <section className="relative py-16 bg-[#0f1428] dark:bg-[#080b1e] overflow-hidden">
-        {/* Subtle cyan glow across the strip */}
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#00d4ff]/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#00d4ff]/20 to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(0,212,255,0.08),transparent)] pointer-events-none" />
-
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {statDefs.map((stat, index) => (
@@ -293,6 +289,7 @@ export function LandingPage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* ═══════════════════════════════════════════════════════════════════════
           ABOUT  ·  Animated logo (theme-aware) + editorial text layout

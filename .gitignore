@@ -46,6 +46,9 @@ ENV/
 # Claude Code
 .claude/
 
+# Source assets / unused resources (kept locally, not in repo)
+resources/
+
 # Node.js
 node_modules/
 npm-debug.log*
