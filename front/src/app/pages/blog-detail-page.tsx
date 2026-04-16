@@ -7,6 +7,7 @@ import { api, BlogPost } from '../../services/api';
 import { PageLoading } from '../components/loading';
 import { ErrorMessage } from '../components/error-message';
 import { MarkdownRenderer } from '../components/markdown-renderer';
+import { SEO } from '../../components/SEO';
 
 export function BlogDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -56,12 +57,20 @@ export function BlogDetailPage() {
     return Math.ceil(words / 200);
   };
 
+  const seoTitle = loading || !post ? 'Blog' : post.name;
+  const seoDescription = loading || !post ? '' : post.description;
+
   if (loading) return <PageLoading />;
   if (error) return <ErrorMessage message={error} onRetry={fetchPost} />;
   if (!post) return <ErrorMessage message="Blog post not found" onRetry={fetchPost} />;
 
   return (
     <div className="max-w-4xl mx-auto">
+      <SEO
+        title={seoTitle}
+        description={seoDescription}
+        canonicalPath={`/blog/${slug}`}
+      />
       {/* Back Button */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}

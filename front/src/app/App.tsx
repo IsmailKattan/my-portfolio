@@ -42,7 +42,8 @@ function Navigation() {
 
   useEffect(() => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
-  }, [isRTL]);
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language, isRTL]);
 
   return (
     <nav className="bg-white/80 dark:bg-[#151933]/90 backdrop-blur-md shadow-lg border-b border-gray-200 dark:border-[#00d4ff]/10 sticky top-0 z-40">

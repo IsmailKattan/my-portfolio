@@ -6,6 +6,7 @@ import {
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { SEO } from '../../components/SEO';
 import { AnimatedLogo } from '../components/AnimatedLogo';
 // import { StatCard } from '../components/StatCard'; // hidden with stats section
 import { FeaturedProjects } from '../components/FeaturedProjects';
@@ -70,7 +71,7 @@ function HeroVideo({ isDark, isRTL }: HeroVideoProps) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-export function LandingPage() {
+export function LandingPage() /* seo-patched */ {
   const { t, i18n } = useTranslation();
   // Arabic is the only RTL language; Turkish + English are LTR.
   // startsWith covers locale variants like 'ar-SA', 'ar-EG', etc.
@@ -97,6 +98,11 @@ export function LandingPage() {
 
   return (
     <div>
+      <SEO
+        title="Home"
+        description="Fresh cybersecurity graduate with a passion for offensive and defensive security. Actively building skills through CTF challenges, labs, and personal projects while working toward a first role in the field."
+        canonicalPath="/"
+      />
 
       {/* ═══════════════════════════════════════════════════════════════════════
           HERO  ·  Cinematic full-viewport video + floating frosted-glass card

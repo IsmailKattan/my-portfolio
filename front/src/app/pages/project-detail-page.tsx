@@ -7,6 +7,7 @@ import { api, Project } from '../../services/api';
 import { PageLoading } from '../components/loading';
 import { ErrorMessage } from '../components/error-message';
 import { MarkdownRenderer } from '../components/markdown-renderer';
+import { SEO } from '../../components/SEO';
 
 // Extended project interface for detail view
 interface ProjectDetail extends Project {
@@ -62,6 +63,9 @@ export function ProjectDetailPage() {
     }
   };
 
+  const seoTitle = loading || !project ? 'Projects' : project.name;
+  const seoDescription = loading || !project ? '' : project.description;
+
   if (loading) return <PageLoading />;
   if (error) return <ErrorMessage message={error} onRetry={fetchProject} />;
   if (!project) return <ErrorMessage message="Project not found" onRetry={() => navigate('/projects')} />;
@@ -72,6 +76,11 @@ export function ProjectDetailPage() {
       lang={project.content_language}
       dir={project.content_language === 'ar' ? 'rtl' : 'ltr'}
     >
+      <SEO
+        title={seoTitle}
+        description={seoDescription}
+        canonicalPath={`/projects/${id}`}
+      />
       {/* Back Button */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}

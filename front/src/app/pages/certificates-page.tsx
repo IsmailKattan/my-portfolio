@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { SEO } from '../../components/SEO';
 import { useState, useEffect } from 'react';
 import { CertificateTree } from '../components/certificate-tree';
 import { motion } from 'motion/react';
@@ -34,6 +35,11 @@ export function CertificatesPage() {
 
   return (
     <div className="max-w-4xl mx-auto">
+      <SEO
+        title="Certificates"
+        description="Cybersecurity certifications and achievements earned by Ismail Qattan."
+        canonicalPath="/certificates"
+      />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
