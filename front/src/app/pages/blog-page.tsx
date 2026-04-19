@@ -8,18 +8,19 @@ import { PageLoading } from '../components/loading';
 import { ErrorMessage } from '../components/error-message';
 
 export function BlogPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchPosts = async () => {
+  const fetchPosts = async (lang: string) => {
     try {
       setLoading(true);
       setError(null);
-      const data = await api.getBlogPosts();
+      const data = await api.getBlogPosts(lang);
       setPosts(data);
+      setSelectedCategory('all');
     } catch (err) {
       setError('Failed to load blog posts');
     } finally {
@@ -28,8 +29,8 @@ export function BlogPage() {
   };
 
   useEffect(() => {
-    fetchPosts();
-  }, []);
+    fetchPosts(i18n.language);
+  }, [i18n.language]);
 
   const categories = ['all', ...Array.from(new Set(posts.map(p => p.category)))];
   
@@ -38,7 +39,7 @@ export function BlogPage() {
     : posts.filter(p => p.category === selectedCategory);
 
   if (loading) return <PageLoading />;
-  if (error) return <ErrorMessage message={error} onRetry={fetchPosts} />;
+  if (error) return <ErrorMessage message={error} onRetry={() => fetchPosts(i18n.language)} />;
 
   return (
     <div>
@@ -99,9 +100,13 @@ export function BlogPage() {
       </motion.div>
 
       {filteredPosts.length === 0 && (
-        <div className="text-center py-12 text-gray-500 dark:text-gray-400">
-          No blog posts found in this category.
-        </div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-center text-gray-500 dark:text-[#8b92b8] py-16"
+        >
+          {t('blog.noContent')}
+        </motion.p>
       )}
     </div>
   );

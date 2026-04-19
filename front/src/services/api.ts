@@ -96,17 +96,20 @@ export const api = {
   getCV: () => fetchJSON<CVData>(`${API_BASE_URL}/api/cv`),
   
   // Experiences
-  getExperiences: () => fetchJSON<Experience[]>(`${API_BASE_URL}/api/experiences`),
+  getExperiences: (lang?: string) =>
+    fetchJSON<Experience[]>(`${API_BASE_URL}/api/experiences${lang ? `?lang=${lang}` : ''}`),
   
   // Projects
-  getProjects: () => fetchJSON<Project[]>(`${API_BASE_URL}/api/projects`),
+  getProjects: (lang?: string) =>
+    fetchJSON<Project[]>(`${API_BASE_URL}/api/projects${lang ? `?lang=${lang}` : ''}`),
   getProject: (id: number) => fetchJSON<Project>(`${API_BASE_URL}/api/projects/${id}`),
   
   // Certificates
   getCertificates: () => fetchJSON<Certificate[]>(`${API_BASE_URL}/api/certificates`),
   
   // Blog
-  getBlogPosts: () => fetchJSON<BlogPost[]>(`${API_BASE_URL}/api/blog`),
+  getBlogPosts: (lang?: string) =>
+    fetchJSON<BlogPost[]>(`${API_BASE_URL}/api/blog${lang ? `?lang=${lang}` : ''}`),
   getBlogPost: (slug: string) => fetchJSON<BlogPost>(`${API_BASE_URL}/api/blog/${slug}`),
 };
 

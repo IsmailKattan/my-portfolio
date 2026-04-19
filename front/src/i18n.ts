@@ -31,7 +31,8 @@ const resources = {
         position: 'Position',
         company: 'Company',
         duration: 'Duration',
-        responsibilities: 'Responsibilities'
+        responsibilities: 'Responsibilities',
+        noContent: 'No experience entries available in this language yet.'
       },
       projects: {
         title: 'Projects',
@@ -40,6 +41,7 @@ const resources = {
         tryDemo: 'Try Demo',
         viewRepo: 'View Repository',
         allCategories: 'All Categories',
+        noContent: 'No projects available in this language yet.',
         description: 'Description'
       },
       certificates: {
@@ -53,7 +55,12 @@ const resources = {
         title: 'Blog Posts',
         readMore: 'Read More',
         publishedOn: 'Published on',
-        author: 'Author'
+        author: 'Author',
+        category: 'Category',
+        allCategories: 'All Categories',
+        tags: 'Tags',
+        readTime: 'min read',
+        noContent: 'No blog posts available in this language yet.'
       },
       chatbot: {
         title: 'Support Chat',
@@ -150,7 +157,8 @@ const resources = {
         position: 'المنصب',
         company: 'الشركة',
         duration: 'المدة',
-        responsibilities: 'المسؤوليات'
+        responsibilities: 'المسؤوليات',
+        noContent: 'لا توجد خبرات متاحة بهذه اللغة بعد.'
       },
       projects: {
         title: 'المشاريع',
@@ -159,6 +167,7 @@ const resources = {
         tryDemo: 'جرب العرض التوضيحي',
         viewRepo: 'عرض المستودع',
         allCategories: 'جميع الفئات',
+        noContent: 'لا توجد مشاريع متاحة بهذه اللغة بعد.',
         description: 'الوصف'
       },
       certificates: {
@@ -172,7 +181,12 @@ const resources = {
         title: 'مقالات المدونة',
         readMore: 'اقرأ المزيد',
         publishedOn: 'نشر في',
-        author: 'الكاتب'
+        author: 'الكاتب',
+        category: 'الفئة',
+        allCategories: 'جميع الفئات',
+        tags: 'الوسوم',
+        readTime: 'د قراءة',
+        noContent: 'لا توجد مقالات متاحة بهذه اللغة بعد.'
       },
       chatbot: {
         title: 'دعم الدردشة',
@@ -269,7 +283,8 @@ const resources = {
         position: 'Pozisyon',
         company: 'Şirket',
         duration: 'Süre',
-        responsibilities: 'Sorumluluklar'
+        responsibilities: 'Sorumluluklar',
+        noContent: 'Bu dilde henüz deneyim girişi bulunmamaktadır.'
       },
       projects: {
         title: 'Projeler',
@@ -278,6 +293,7 @@ const resources = {
         tryDemo: 'Demoyu Dene',
         viewRepo: 'Depoyu Görüntüle',
         allCategories: 'Tüm Kategoriler',
+        noContent: 'Bu dilde henüz proje bulunmamaktadır.',
         description: 'Açıklama'
       },
       certificates: {
@@ -291,7 +307,12 @@ const resources = {
         title: 'Blog Yazıları',
         readMore: 'Devamını Oku',
         publishedOn: 'Yayınlanma',
-        author: 'Yazar'
+        author: 'Yazar',
+        category: 'Kategori',
+        allCategories: 'Tüm Kategoriler',
+        tags: 'Etiketler',
+        readTime: 'dk okuma',
+        noContent: 'Bu dilde henüz blog yazısı bulunmamaktadır.'
       },
       chatbot: {
         title: 'Destek Sohbeti',

@@ -8,18 +8,19 @@ import { PageLoading } from '../components/loading';
 import { ErrorMessage } from '../components/error-message';
 
 export function ProjectsPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchProjects = async () => {
+  const fetchProjects = async (lang: string) => {
     try {
       setLoading(true);
       setError(null);
-      const data = await api.getProjects();
+      const data = await api.getProjects(lang);
       setProjects(data);
+      setSelectedCategory('all');
     } catch (err) {
       setError('Failed to load projects');
     } finally {
@@ -28,8 +29,8 @@ export function ProjectsPage() {
   };
 
   useEffect(() => {
-    fetchProjects();
-  }, []);
+    fetchProjects(i18n.language);
+  }, [i18n.language]);
 
   const categories = ['all', ...Array.from(new Set(projects.map(p => p.category)))];
   
@@ -38,7 +39,7 @@ export function ProjectsPage() {
     : projects.filter(p => p.category === selectedCategory);
 
   if (loading) return <PageLoading />;
-  if (error) return <ErrorMessage message={error} onRetry={fetchProjects} />;
+  if (error) return <ErrorMessage message={error} onRetry={() => fetchProjects(i18n.language)} />;
 
   return (
     <div>
@@ -99,9 +100,13 @@ export function ProjectsPage() {
       </motion.div>
 
       {filteredProjects.length === 0 && (
-        <div className="text-center py-12 text-gray-500 dark:text-gray-400">
-          No projects found in this category.
-        </div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-center text-gray-500 dark:text-[#8b92b8] py-16"
+        >
+          {t('projects.noContent')}
+        </motion.p>
       )}
     </div>
   );

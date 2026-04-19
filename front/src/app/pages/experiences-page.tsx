@@ -101,16 +101,16 @@ function ExperienceCard({ experience, index }: ExperienceCardProps) {
 }
 
 export function ExperiencesPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [experiences, setExperiences] = useState<Experience[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchExperiences = async () => {
+  const fetchExperiences = async (lang: string) => {
     try {
       setLoading(true);
       setError(null);
-      const data = await api.getExperiences();
+      const data = await api.getExperiences(lang);
       setExperiences(data);
     } catch (err) {
       setError('Failed to load experiences');
@@ -120,11 +120,11 @@ export function ExperiencesPage() {
   };
 
   useEffect(() => {
-    fetchExperiences();
-  }, []);
+    fetchExperiences(i18n.language);
+  }, [i18n.language]);
 
   if (loading) return <PageLoading />;
-  if (error) return <ErrorMessage message={error} onRetry={fetchExperiences} />;
+  if (error) return <ErrorMessage message={error} onRetry={() => fetchExperiences(i18n.language)} />;
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -136,11 +136,21 @@ export function ExperiencesPage() {
         <h1 className="text-4xl mb-4">{t('experiences.title')}</h1>
       </motion.div>
 
-      <div className="space-y-4">
-        {experiences.map((experience, index) => (
-          <ExperienceCard key={experience.id} experience={experience} index={index} />
-        ))}
-      </div>
+      {experiences.length === 0 ? (
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-center text-gray-500 dark:text-[#8b92b8] py-16"
+        >
+          {t('experiences.noContent')}
+        </motion.p>
+      ) : (
+        <div className="space-y-4">
+          {experiences.map((experience, index) => (
+            <ExperienceCard key={experience.id} experience={experience} index={index} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

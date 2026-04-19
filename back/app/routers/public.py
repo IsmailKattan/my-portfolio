@@ -35,15 +35,19 @@ def get_cv(db: Session = Depends(get_db)):
 
 
 @router.get("/experiences", response_model=List[ExperienceResponse])
-def get_experiences(db: Session = Depends(get_db)):
-    experiences = db.query(Experience).order_by(Experience.id.desc()).all()
-    return [ExperienceResponse.model_validate(exp) for exp in experiences]
+def get_experiences(lang: Optional[str] = None, db: Session = Depends(get_db)):
+    q = db.query(Experience)
+    if lang:
+        q = q.filter(Experience.content_language == lang)
+    return [ExperienceResponse.model_validate(exp) for exp in q.order_by(Experience.id.desc()).all()]
 
 
 @router.get("/projects", response_model=List[ProjectResponse])
-def get_projects(db: Session = Depends(get_db)):
-    projects = db.query(Project).order_by(Project.id.desc()).all()
-    return [ProjectResponse.model_validate(p) for p in projects]
+def get_projects(lang: Optional[str] = None, db: Session = Depends(get_db)):
+    q = db.query(Project)
+    if lang:
+        q = q.filter(Project.content_language == lang)
+    return [ProjectResponse.model_validate(p) for p in q.order_by(Project.id.desc()).all()]
 
 
 @router.get("/projects/{project_id}", response_model=ProjectResponse)
@@ -80,9 +84,11 @@ def get_certificates(db: Session = Depends(get_db)):
 
 
 @router.get("/blog", response_model=List[BlogPostListResponse])
-def get_blog_posts(db: Session = Depends(get_db)):
-    posts = db.query(BlogPost).order_by(BlogPost.published_date.desc()).all()
-    return [BlogPostListResponse.model_validate(p) for p in posts]
+def get_blog_posts(lang: Optional[str] = None, db: Session = Depends(get_db)):
+    q = db.query(BlogPost)
+    if lang:
+        q = q.filter(BlogPost.content_language == lang)
+    return [BlogPostListResponse.model_validate(p) for p in q.order_by(BlogPost.published_date.desc()).all()]
 
 
 @router.get("/blog/{slug}", response_model=BlogPostResponse)
