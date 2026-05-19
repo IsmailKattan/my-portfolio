@@ -124,7 +124,19 @@ const resources = {
             legendary: 'Legendary'
           },
           percentHave: 'have this'
+        },
+        contact: {
+          heading: "Let's Work Together",
+          subtitle: "Ready to secure your digital assets? I'm always open to discussing new projects, opportunities, and partnerships.",
+          ctaWork: 'View My Work',
+          ctaContact: 'Get In Touch'
         }
+      },
+      footer: {
+        tagline: 'Cybersecurity graduate. Builder. Problem solver.',
+        quickLinks: 'Quick Links',
+        connect: 'Connect',
+        rights: 'All rights reserved.'
       }
     }
   },
@@ -250,7 +262,19 @@ const resources = {
             legendary: 'أسطوري'
           },
           percentHave: 'يمتلكون هذا'
+        },
+        contact: {
+          heading: 'لنعمل معاً',
+          subtitle: 'هل أنت مستعد لتأمين أصولك الرقمية؟ أنا دائماً منفتح على مناقشة المشاريع والفرص والشراكات الجديدة.',
+          ctaWork: 'استعرض أعمالي',
+          ctaContact: 'تواصل معي'
         }
+      },
+      footer: {
+        tagline: 'خريج أمن سيبراني. مطوّر. محلّل مشكلات.',
+        quickLinks: 'روابط سريعة',
+        connect: 'تواصل',
+        rights: 'جميع الحقوق محفوظة.'
       }
     }
   },
@@ -376,7 +400,19 @@ const resources = {
             legendary: 'Efsanevi'
           },
           percentHave: 'sahip'
+        },
+        contact: {
+          heading: 'Birlikte Çalışalım',
+          subtitle: 'Dijital varlıklarınızı güvence altına almaya hazır mısınız? Yeni projeler, fırsatlar ve iş birlikleri için her zaman açığım.',
+          ctaWork: 'Çalışmalarımı Gör',
+          ctaContact: 'İletişime Geç'
         }
+      },
+      footer: {
+        tagline: 'Siber güvenlik mezunu. Geliştirici. Problem çözücü.',
+        quickLinks: 'Hızlı Bağlantılar',
+        connect: 'Bağlantı',
+        rights: 'Tüm hakları saklıdır.'
       }
     }
   }

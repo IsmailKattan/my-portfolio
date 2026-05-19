@@ -93,9 +93,6 @@ export function LoginPage() {
           </button>
         </form>
 
-        <div className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
-          Default: admin / admin123
-        </div>
       </div>
     </div>
   );

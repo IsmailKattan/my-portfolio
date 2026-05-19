@@ -33,6 +33,12 @@ async function fetchWithAuth(url: string, options: RequestInit = {}) {
 
 // Auth
 export const adminAuth = {
+  changePassword: (currentPassword: string, newPassword: string) =>
+    fetchWithAuth(`${API_BASE_URL}/api/admin/password`, {
+      method: 'PUT',
+      body: JSON.stringify({ current_password: currentPassword, new_password: newPassword }),
+    }),
+
   login: async (username: string, password: string) => {
     try {
       const response = await fetch(`${API_BASE_URL}/api/admin/login`, {

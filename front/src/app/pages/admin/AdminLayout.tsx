@@ -1,14 +1,15 @@
 import { Outlet, Navigate, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { 
-  LayoutDashboard, 
-  User, 
-  Briefcase, 
-  FolderGit2, 
-  Award, 
-  BookOpen, 
+import {
+  LayoutDashboard,
+  User,
+  Briefcase,
+  FolderGit2,
+  Award,
+  BookOpen,
   LogOut,
-  Shield
+  Shield,
+  KeyRound
 } from 'lucide-react';
 
 const navItems = [
@@ -18,6 +19,7 @@ const navItems = [
   { path: '/admin/projects', icon: FolderGit2, label: 'Projects' },
   { path: '/admin/certificates', icon: Award, label: 'Certificates' },
   { path: '/admin/blog', icon: BookOpen, label: 'Blog' },
+  { path: '/admin/password', icon: KeyRound, label: 'Change Password' },
 ];
 
 export function AdminLayout() {
